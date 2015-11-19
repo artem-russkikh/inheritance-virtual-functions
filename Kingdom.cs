@@ -3,5 +3,4 @@ using System;
 
 class Kingdom:Monarchy
 {
-  protected int id;
 }
