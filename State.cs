@@ -1,4 +1,5 @@
 // Государство
+using System;
 
 class State
 {
