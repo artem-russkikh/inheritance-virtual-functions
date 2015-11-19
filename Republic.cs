@@ -1,6 +1,6 @@
 // Государство
 
-class State
+class Republic:State
 {
   protected int id;
 }
