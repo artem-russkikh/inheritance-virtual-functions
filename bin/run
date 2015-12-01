@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/usr/local/bin/mcs Program.cs models/State.cs models/republic/Republic.cs models/monarchy/Kingdom.cs models/monarchy/Monarchy.cs && mono Program.exe
