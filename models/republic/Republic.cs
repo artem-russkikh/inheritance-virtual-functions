@@ -4,9 +4,8 @@ using System;
 class Republic:State
 {
   public Republic() {
-    this.id = State.count + 1;
+    this.id = State.count;
     this.name = "Гоcударство (республика) " + id;
-    count++;
   }
 
   public override void Show() {

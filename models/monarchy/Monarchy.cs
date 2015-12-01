@@ -4,9 +4,8 @@ using System;
 class Monarchy:State
 {
   public Monarchy() {
-    this.id = State.count + 1;
-    this.name = "Гоcударство (монархия) "+id;
-    count++;
+    this.id = State.count;
+    this.name = "Гоcударство (монархия) " + id;
   }
 
   public override void Show() {

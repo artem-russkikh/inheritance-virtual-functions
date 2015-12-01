@@ -9,9 +9,9 @@ class State
   protected string name;
 
   public State() {
-    this.id = State.count + 1;
-    this.name = "Гоcударство "+id;
     count++;
+    this.id = State.count;
+    this.name = "Гоcударство " + id;
   }
 
   public State(int id, string name) {

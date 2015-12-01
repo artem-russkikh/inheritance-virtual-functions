@@ -76,8 +76,10 @@ class Program
 
   static void Main(string[] args)
   {
-    MainMenu();
-    
+    while (true)
+    {
+      MainMenu();
+    }
     // bool cikl = true;
     //   int swi = -1;
     //   while (cikl)
