@@ -10,7 +10,7 @@ class Kingdom:Monarchy
     this.inheritance = true;
   }
 
-  public Kingdom(string name, string monarch_name, bool inheritance) : base(name, monarch_name) {
+  public Kingdom(string name, int age, string monarch_name, bool inheritance) : base(name, age, monarch_name) {
     this.inheritance = inheritance;
   }
 

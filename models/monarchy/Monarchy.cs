@@ -10,7 +10,7 @@ class Monarchy:State
     this.monarch_name = "Людовиг III";
   }
 
-  public Monarchy(string name, string monarch_name) : base(name) {
+  public Monarchy(string name, int age, string monarch_name) : base(name, age) {
     this.monarch_name = monarch_name;
   }
 

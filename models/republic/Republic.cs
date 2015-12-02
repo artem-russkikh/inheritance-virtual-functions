@@ -10,7 +10,7 @@ class Republic:State
     this.president = true;
   }
 
-  public Republic(string name, bool president) : base(name) {
+  public Republic(string name, int age, bool president) : base(name, age) {
     this.president = president;
   }
 
