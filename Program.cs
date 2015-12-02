@@ -3,6 +3,7 @@
 // государство -> республика
 
 using System;
+using System.Linq;
 
 class Program
 {
@@ -106,7 +107,7 @@ class Program
     for(int i = 0; i < mas.Length; i++) {
       mas[i].Show();
     }
-    Console.WriteLine("1. Имена всех государств, которые существуют менее 50 лет");
+    Console.WriteLine("1. Имена всех государств, которые существуют менее 1000 лет");
     Console.WriteLine("2. Количество государств - королевств");
     Console.WriteLine("3. Средний возраст всех государств");
     Console.WriteLine("4. Наименование старейшего государства");
@@ -139,7 +140,7 @@ class Program
             }
         case 1:
             {
-              firstQuery();
+              firstQuery(mas);
               break;
             }
         case 2:
@@ -160,7 +161,15 @@ class Program
         default: break;
     }
   }
-  static void firstQuery() {}
+  static void firstQuery(State[] states) {
+    var stateQuery =
+      from state in states
+      where state.Age < 1000
+      select state;
+    foreach (State state in stateQuery) {
+      Console.WriteLine(state.Name);
+    }
+  }
   static void secondQuery() {}
   static void thirdQuery() {}
   static void fourthQuery() {}
