@@ -20,8 +20,12 @@ class State
     this.name = name;
   }
 
-  public virtual void Show() {
-    Console.WriteLine("Гоcударство.\n ID: {0}\n Название: {1}\n", id, name);
+  public virtual void Show(string extenstion = null) {
+    if (extenstion != null) {
+      Console.WriteLine("Гоcударство{0}.\n ID: {1}\n Название: {2}", extenstion, id, name);
+    } else {
+      Console.WriteLine("Гоcударство.\n ID: {0}\n Название: {1}\n", id, name);
+    }
   }
 
   public virtual int Id {

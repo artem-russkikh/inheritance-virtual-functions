@@ -63,8 +63,10 @@ class Program
 
   static void FirstPart() {
     Console.WriteLine("\nИспользование конструкторов с параметрами:");
+    Console.WriteLine("CODE:\nnew Republic('Республика конструктор с параметрами', 'false')");
     var customParams = new Republic("Республика конструктор с параметрами", false);
     customParams.Show();
+    Console.WriteLine("CODE:\nnew Kingdom('Королевство конструктор с параметрами', 'Имя монарха кастомное и передается в конструктор базового класса Monarchy', 'false')");
     var customParams2 = new Kingdom("Королевство конструктор с параметрами", "Имя монарха кастомное и передается в конструктор базового класса Monarchy", false);
     customParams2.Show();
     Console.WriteLine("...............\n");

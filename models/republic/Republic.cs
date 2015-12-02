@@ -14,8 +14,14 @@ class Republic:State
     this.president = president;
   }
 
-  public override void Show() {
-    Console.WriteLine("Республика.\n ID: {0}\n Название: {1} \n Президентская?: {2} \n", id, name, President);
+  public override void Show(string extenstion = null) {
+    if (extenstion != null) {
+      base.Show(extenstion);
+      Console.WriteLine(" Президентская?: {0}", President);
+    } else {
+      base.Show("-республика");
+      Console.WriteLine(" Президентская?: {0} \n", President);
+    }
   }
 
   public bool President {

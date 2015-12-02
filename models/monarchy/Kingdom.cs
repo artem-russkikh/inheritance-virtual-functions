@@ -14,8 +14,14 @@ class Kingdom:Monarchy
     this.inheritance = inheritance;
   }
 
-  public override void Show() {
-    Console.WriteLine("Королевство.\n ID: {0}\n Название: {1} \n Имя монарха: {2}\n Передача власти по наследству: {3} \n", id, name, monarch_name, inheritance);
+  public override void Show(string extenstion = null) {
+    if (extenstion != null) {
+      base.Show(extenstion);
+      Console.WriteLine(" Передача власти по наследству: {0}", inheritance);
+    } else {
+      base.Show("-монархия-королевство");
+      Console.WriteLine(" Передача власти по наследству: {0} \n", inheritance);
+    }
   }
 
   public bool Inheritance {

@@ -14,8 +14,14 @@ class Monarchy:State
     this.monarch_name = monarch_name;
   }
 
-  public override void Show() {
-    Console.WriteLine("Монархия.\n ID: {0}\n Название: {1} \n Имя монарха: {2} \n", id, name, monarch_name);
+  public override void Show(string extenstion = null) {
+    if (extenstion != null) {
+      base.Show(extenstion);
+      Console.WriteLine(" Имя монарха: {0}", MonarchName);
+    } else {
+      base.Show("-монархия");
+      Console.WriteLine(" Имя монарха: {0} \n", MonarchName);
+    }
   }
 
   public string MonarchName {
