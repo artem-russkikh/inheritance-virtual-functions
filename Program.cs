@@ -87,6 +87,7 @@ class Program
   }
 
   static void SecondPart() {
+    Console.WriteLine("\nМассив государств\n");
     System.Threading.Thread.Sleep(400);
     Random rand = new Random();
     State[] mas = new State[12];
@@ -105,8 +106,64 @@ class Program
     for(int i = 0; i < mas.Length; i++) {
       mas[i].Show();
     }
-
+    Console.WriteLine("1. Имена всех государств, которые существуют менее 50 лет");
+    Console.WriteLine("2. Количество государств - королевств");
+    Console.WriteLine("3. Средний возраст всех государств");
+    Console.WriteLine("4. Наименование старейшего государства");
+    Console.WriteLine("0. Назад.");
+    Console.Write("\nВыберите команду: ");
+    int choose = -1;
+    do
+    {
+      try {
+        choose = int.Parse(Console.ReadLine());
+        if (choose < 0 || choose > 4)
+        {
+          Console.Write("Введена несуществующая команда. Повторите ввод: ");
+        }
+      }
+      catch (FormatException)
+      {
+        Console.Write("Введен некорректный символ. Повторите ввод: ");
+      }
+      catch (Exception)
+      {
+        Console.Write("Введен некорректный символ. Повторите ввод: ");
+      }
+    } while (choose < 0 || choose > 4);
+    switch (choose)
+    {
+        case 0:
+            {
+              break;
+            }
+        case 1:
+            {
+              firstQuery();
+              break;
+            }
+        case 2:
+            {
+              secondQuery();
+              break;
+            }
+        case 3:
+            {
+              thirdQuery();
+              break;
+            }
+        case 4:
+            {
+              fourthQuery();
+              break;
+            }
+        default: break;
+    }
   }
+  static void firstQuery() {}
+  static void secondQuery() {}
+  static void thirdQuery() {}
+  static void fourthQuery() {}
 
   static void ThirdPart() {}
 
