@@ -62,6 +62,8 @@ class Program
   }
 
   static void FirstPart() {
+    State customParams = new Republic("Республика конструктор с параметрами", false);
+    customParams.Show();
     State[] mas = new State[4];
     mas[0] = new State();
     mas[1] = new Republic();

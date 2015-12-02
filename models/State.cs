@@ -14,10 +14,10 @@ class State
     this.name = "Гоcударство " + id;
   }
 
-  public State(int id, string name) {
-    this.id = id;
-    this.name = name;
+  public State(string name) {
     count++;
+    this.id = State.count;
+    this.name = name;
   }
 
   public virtual void Show() {

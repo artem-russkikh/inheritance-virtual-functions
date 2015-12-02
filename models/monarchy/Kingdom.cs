@@ -5,7 +5,7 @@ class Kingdom:Monarchy
 {
   public Kingdom() {
     this.id = State.count;
-    this.name = "Гоcударство (королевство) " + id;
+    this.name = "Гоcударство (монархия-королевство) " + id;
   }
 
   public override void Show() {
