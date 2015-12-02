@@ -171,7 +171,11 @@ class Program
     }
   }
   static void secondQuery(State[] states) {
-    
+    var stateQuery =
+      from state in states
+      where state is Kingdom
+      select state;
+    Console.WriteLine(stateQuery.Count());
   }
   static void thirdQuery(State[] states) {}
   static void fourthQuery(State[] states) {}
