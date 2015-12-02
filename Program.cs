@@ -62,11 +62,15 @@ class Program
   }
 
   static void FirstPart() {
-    State customParams = new Republic("Республика конструктор с параметрами", false);
+    Console.WriteLine("\nИспользование конструкторов с параметрами:");
+    var customParams = new Republic("Республика конструктор с параметрами", false);
     customParams.Show();
-    State customParams2 = new Kingdom("Королевство конструктор с параметрами", "Имя монарха кастомное и передается в конструктор базового класса Monarchy", 100);
+    var customParams2 = new Kingdom("Королевство конструктор с параметрами", "Имя монарха кастомное и передается в конструктор базового класса Monarchy", false);
     customParams2.Show();
-    State[] mas = new State[4];
+    Console.WriteLine("...............\n");
+    System.Threading.Thread.Sleep(2000);
+    Console.WriteLine("Использование конструкторов без параметров:");
+    var mas = new State[4];
     mas[0] = new State();
     mas[1] = new Republic();
     mas[2] = new Monarchy();
@@ -74,6 +78,10 @@ class Program
     for(int i=0;i<mas.Length;i++){
       mas[i].Show();
     }
+    Console.WriteLine("...............\n");
+    System.Threading.Thread.Sleep(2000);
+    Console.WriteLine("Получение имени монарха для Id='{0}' через KingName='{1}' и MonarchName='{2}'\n", customParams2.Id,  customParams2.KingName, customParams2.MonarchName);
+    System.Threading.Thread.Sleep(2000);
   }
   static void SecondPart() {}
   static void ThirdPart() {}
