@@ -70,22 +70,44 @@ class Program
     var customParams2 = new Kingdom("Королевство конструктор с параметрами", 200, "Имя монарха кастомное и передается в конструктор базового класса Monarchy", false);
     customParams2.Show();
     Console.WriteLine("...............\n");
-    System.Threading.Thread.Sleep(2000);
+    System.Threading.Thread.Sleep(400);
     Console.WriteLine("Использование конструкторов без параметров:");
     var mas = new State[4];
     mas[0] = new State();
     mas[1] = new Republic();
     mas[2] = new Monarchy();
     mas[3] = new Kingdom();
-    for(int i=0;i<mas.Length;i++){
+    for(int i = 0; i < mas.Length; i++) {
       mas[i].Show();
     }
     Console.WriteLine("...............\n");
-    System.Threading.Thread.Sleep(2000);
+    System.Threading.Thread.Sleep(400);
     Console.WriteLine("Получение имени монарха для Id='{0}' через KingName='{1}' и MonarchName='{2}'\n", customParams2.Id,  customParams2.KingName, customParams2.MonarchName);
-    System.Threading.Thread.Sleep(2000);
+    System.Threading.Thread.Sleep(400);
   }
-  static void SecondPart() {}
+
+  static void SecondPart() {
+    System.Threading.Thread.Sleep(400);
+    Random rand = new Random();
+    State[] mas = new State[12];
+    State[] tmp = new State[4];
+    for(int i = 0; i < mas.Length; i++) {
+      tmp[0] = new State();
+      tmp[0].Age = rand.Next(10, 2000);
+      tmp[1] = new Kingdom();
+      tmp[1].Age = rand.Next(10, 2000);
+      tmp[2] = new Republic();
+      tmp[2].Age = rand.Next(10, 2000);
+      tmp[3] = new Monarchy();
+      tmp[3].Age = rand.Next(10, 2000);
+      mas[i]=tmp[rand.Next(0,4)];
+    }
+    for(int i = 0; i < mas.Length; i++) {
+      mas[i].Show();
+    }
+
+  }
+
   static void ThirdPart() {}
 
   static void Main(string[] args)
