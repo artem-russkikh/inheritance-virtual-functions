@@ -5,14 +5,12 @@ class Republic:State
 {
   protected bool president;
 
-  public Republic() {
-    this.id = State.count;
+  public Republic() : base() {
     this.name = "Гоcударство (республика) " + id;
     this.president = true;
   }
 
-  public Republic(string name, bool president) {
-    this.name = name;
+  public Republic(string name, bool president) : base(name) {
     this.president = president;
   }
 
