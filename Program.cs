@@ -145,17 +145,17 @@ class Program
             }
         case 2:
             {
-              secondQuery();
+              secondQuery(mas);
               break;
             }
         case 3:
             {
-              thirdQuery();
+              thirdQuery(mas);
               break;
             }
         case 4:
             {
-              fourthQuery();
+              fourthQuery(mas);
               break;
             }
         default: break;
@@ -170,9 +170,11 @@ class Program
       Console.WriteLine(state.Name);
     }
   }
-  static void secondQuery() {}
-  static void thirdQuery() {}
-  static void fourthQuery() {}
+  static void secondQuery(State[] states) {
+    
+  }
+  static void thirdQuery(State[] states) {}
+  static void fourthQuery(State[] states) {}
 
   static void ThirdPart() {}
 
