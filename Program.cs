@@ -94,51 +94,5 @@ class Program
     {
       MainMenu();
     }
-    // bool cikl = true;
-    //   int swi = -1;
-    //   while (cikl)
-    //   {
-    //       while (true)
-    //       {
-    //           Console.WriteLine("1-узнать name по id");
-    //           Console.WriteLine("2-запрос 2");
-    //           Console.WriteLine("3-запрос 3");
-    //           Console.WriteLine("4-просмотр масива");
-    //           Console.WriteLine("5-выход");
-    //           try
-    //           {
-    //               swi = int.Parse(Console.ReadLine());
-    //               if (swi < 1 || swi > 5) { Console.WriteLine("Неправильный ввод"); continue; }
-    //               else break;
-    //           }
-    //           catch (FormatException e) { Console.WriteLine("Неправильный ввод");continue; }
-    //       }
-    //       switch (swi)
-    //       {
-    //           case 1: {
-    //                                 int netres=0;
-    //                                 int idpoisk = -1;
-    //                                 while (true){
-    //                               Console.WriteLine("введи id");
-    //                               try
-    //                               {
-    //                                   idpoisk = int.Parse(Console.ReadLine());
-    //                                   break;
-    //                               }
-    //                               catch (FormatException e) { Console.WriteLine("неверно");continue; }
-    //                           }
-    //                           for(int i=0;i<mas.Length;i++){
-    //                             if(mas[i].Id==idpoisk){
-    //                               mas[i].Show();
-    //                               netres++;
-    //                             }}
-    //                                   if(netres==0)Console.WriteLine("нет такого id");
-    //             }  break;
-    //           case 2: {  } break;
-    //           case 3: {  } break;
-    //           case 4: { for(int i=0;i<mas.Length;i++)mas[i].Show(); } break;
-    //           case 5: { cikl=false; } break;
-    //       }
-    //   }
   }
 }
