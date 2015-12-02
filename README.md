@@ -8,6 +8,8 @@ It is my laboratory work - program to demonstrate inheritance and virtual functi
 
 ## Подготовка
 
+...
+
 ## Часть 1
 
 ...
