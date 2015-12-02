@@ -8,7 +8,7 @@ class Monarchy:State
   public Monarchy() {
     this.id = State.count;
     this.name = "Гоcударство (монархия) " + id;
-    this.monarch_name = "Вася III";
+    this.monarch_name = "Людовиг III";
   }
 
   public Monarchy(string name, string monarch_name) {
