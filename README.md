@@ -7,12 +7,22 @@ It is my laboratory work - program to demonstrate inheritance and virtual functi
 Это моя лабораторная работа для демонстрации наследования и виртуальных функций в C#
 
 ## Подготовка
-
-...
+Перед запуском необходимо установить [Mono](http://www.mono-project.com/)
+```
+git clone git@github.com:artem-russkikh/inheritance-virtual-functions.git
+cd inheritance-virtual-functions
+./bin/run
+```
+Файл [./bin/run](../blob/master/bin/run) всего лишь shell скрипт для вызова команд mcs и mono, которые компилируют и запускают код проекта
 
 ## Часть 1
 
-...
+Иерархия классов, виртуальные функции
+```
+Республика, монархия, королевство, государство;
+государство -> монархия -> королевство
+государство -> республика
+```
 
 ## Часть 2
 
