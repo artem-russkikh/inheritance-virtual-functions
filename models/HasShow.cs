@@ -1,5 +1,5 @@
 using System;
 
 abstract class HasShow {
-  abstract public void Show(string extenstion);
+  abstract public void Show(string extenstion = null);
 }
