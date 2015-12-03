@@ -177,7 +177,19 @@ class Program
       select state;
     Console.WriteLine(stateQuery.Count());
   }
-  static void thirdQuery(State[] states) {}
+  static void thirdQuery(State[] states) {
+    var stateQuery =
+      from state in states
+      select state;
+    var stateAgeQuery =
+      from state in states
+      select state.Age;
+    int sumAge = 0;
+    foreach (State state in stateQuery) {
+      sumAge += state.Age;
+    }
+    Console.WriteLine("{0} / {1} = {2}", sumAge, states.Length, stateAgeQuery.Average());
+  }
   static void fourthQuery(State[] states) {}
 
   static void ThirdPart() {}
