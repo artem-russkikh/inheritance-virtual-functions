@@ -190,7 +190,25 @@ class Program
     }
     Console.WriteLine("{0} / {1} = {2}", sumAge, states.Length, stateAgeQuery.Average());
   }
-  static void fourthQuery(State[] states) {}
+  static void fourthQuery(State[] states) {
+    var stateQuery =
+      from state in states
+      select state;
+    int maxId = 0;
+    int max = 0;
+    foreach (State state in states) {
+      if (max < state.Age) {
+        max = state.Age;
+        maxId = state.Id;
+      }
+    }
+    var stateQuery2 =
+      from state in states
+      where state.Id == maxId
+      select state;
+    State st = stateQuery2.First();
+    Console.WriteLine(st.Name);
+  }
 
   static void ThirdPart() {}
 
