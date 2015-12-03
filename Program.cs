@@ -4,6 +4,7 @@
 
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 class Program
 {
@@ -64,10 +65,10 @@ class Program
 
   static void FirstPart() {
     Console.WriteLine("\nИспользование конструкторов с параметрами:");
-    Console.WriteLine("CODE:\nnew Republic('Республика конструктор с параметрами', 'false')");
+    Console.WriteLine("CODE:\new Republic('Республика конструктор с параметрами', 100, false);");
     var customParams = new Republic("Республика конструктор с параметрами", 100, false);
     customParams.Show();
-    Console.WriteLine("CODE:\nnew Kingdom('Королевство конструктор с параметрами', 'Имя монарха кастомное и передается в конструктор базового класса Monarchy', 'false')");
+    Console.WriteLine("CODE:\nnew Kingdom('Королевство конструктор с параметрами', 200, 'Имя монарха кастомное и передается в конструктор базового класса Monarchy', false);");
     var customParams2 = new Kingdom("Королевство конструктор с параметрами", 200, "Имя монарха кастомное и передается в конструктор базового класса Monarchy", false);
     customParams2.Show();
     Console.WriteLine("...............\n");
@@ -87,9 +88,7 @@ class Program
     System.Threading.Thread.Sleep(400);
   }
 
-  static void SecondPart() {
-    Console.WriteLine("\nМассив государств\n");
-    System.Threading.Thread.Sleep(400);
+  static State[] GenerateMas() {
     Random rand = new Random();
     State[] mas = new State[12];
     State[] tmp = new State[4];
@@ -104,6 +103,13 @@ class Program
       tmp[3].Age = rand.Next(10, 2000);
       mas[i]=tmp[rand.Next(0,4)];
     }
+    return mas;
+  }
+
+  static void SecondPart() {
+    Console.WriteLine("\nМассив государств\n");
+    System.Threading.Thread.Sleep(400);
+    State[] mas = GenerateMas();
     for(int i = 0; i < mas.Length; i++) {
       mas[i].Show();
     }
@@ -196,7 +202,7 @@ class Program
       select state;
     int maxId = 0;
     int max = 0;
-    foreach (State state in states) {
+    foreach (State state in stateQuery) {
       if (max < state.Age) {
         max = state.Age;
         maxId = state.Id;
@@ -210,7 +216,43 @@ class Program
     Console.WriteLine(st.Name);
   }
 
-  static void ThirdPart() {}
+  static void ThirdPart() {
+    Console.WriteLine("\nИспользование интерфейса для сортировки по возрасту:");
+    System.Threading.Thread.Sleep(400);
+    State[] mas = GenerateMas();
+    Array.Sort(mas);
+    for(int i = 0; i < mas.Length; i++) {
+      mas[i].Show();
+    }
+
+    int idpoisk = -1;
+    while (true) {
+      Console.Write("Поиск по ID: ");
+      try
+      {
+          idpoisk = int.Parse(Console.ReadLine());
+          break;
+      }
+      catch (FormatException e) { Console.WriteLine("Неправильный ввод {0}", e); continue; }
+    }
+
+    State s = Array.Find(mas, item => item.Id == idpoisk);
+    if (s != null) {
+      s.Show();
+    } else {
+      Console.WriteLine("Элемент не найден!");
+    }
+
+    Console.WriteLine("\nИспользование интерфейса для копирования объекта:");
+
+    State cloningObject = null;
+    if (mas[0] is State) {
+      cloningObject = (State) mas[0].Clone();
+    } else {
+      Console.WriteLine("mas[0] != State");
+    }
+    cloningObject.Show();
+  }
 
   static void Main(string[] args)
   {

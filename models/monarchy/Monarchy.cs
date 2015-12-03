@@ -14,6 +14,10 @@ class Monarchy:State
     this.monarch_name = monarch_name;
   }
 
+  public override object Clone() {
+    return new Monarchy(this.name, this.age, this.monarch_name);
+  }
+
   public override void Show(string extenstion = null) {
     if (extenstion != null) {
       base.Show(extenstion);

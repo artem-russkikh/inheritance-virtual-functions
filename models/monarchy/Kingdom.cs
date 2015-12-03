@@ -14,6 +14,10 @@ class Kingdom:Monarchy
     this.inheritance = inheritance;
   }
 
+  public override object Clone() {
+    return new Kingdom(this.name, this.age, this.monarch_name, this.inheritance);
+  }
+
   public override void Show(string extenstion = null) {
     if (extenstion != null) {
       base.Show(extenstion);

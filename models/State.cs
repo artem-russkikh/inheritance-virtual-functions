@@ -1,7 +1,7 @@
 // Государство
 using System;
 
-class State
+class State : HasShow, IComparable <State>
 {
   public static int count=0;
 
@@ -23,7 +23,16 @@ class State
     this.age = age;
   }
 
-  public virtual void Show(string extenstion = null) {
+  public override object Clone() {
+    return new State(this.name, this.age);
+  }
+
+  public int CompareTo(State c)
+  {
+    return Age.CompareTo(c.Age);
+  }
+
+  public override void Show(string extenstion = null) {
     if (extenstion != null) {
       Console.WriteLine("Гоcударство{0}.\n ID: {1}\n Название: {2}\n Возраст: {3}", extenstion, id, name, age);
     } else {

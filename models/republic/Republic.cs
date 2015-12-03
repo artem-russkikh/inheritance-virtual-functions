@@ -14,6 +14,10 @@ class Republic:State
     this.president = president;
   }
 
+  public override object Clone() {
+    return new Republic(this.name, this.age, this.president);
+  }
+
   public override void Show(string extenstion = null) {
     if (extenstion != null) {
       base.Show(extenstion);
