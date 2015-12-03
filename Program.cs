@@ -196,7 +196,7 @@ class Program
       select state;
     int maxId = 0;
     int max = 0;
-    foreach (State state in states) {
+    foreach (State state in stateQuery) {
       if (max < state.Age) {
         max = state.Age;
         maxId = state.Id;
