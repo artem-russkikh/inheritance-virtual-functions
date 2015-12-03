@@ -13,7 +13,7 @@ git clone git@github.com:artem-russkikh/inheritance-virtual-functions.git
 cd inheritance-virtual-functions
 ./bin/run
 ```
-Файл [./bin/run](../master/bin/run) всего лишь shell скрипт для вызова команд mcs и mono, которые компилируют и запускают код проекта
+Файл [./bin/run](../master/bin/run) всего лишь bash скрипт для вызова команд mcs и mono, которые компилируют и запускают код проекта
 
 ## Часть 1
 
