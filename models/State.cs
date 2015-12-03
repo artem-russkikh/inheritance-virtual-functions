@@ -23,6 +23,10 @@ class State : HasShow, IComparable <State>
     this.age = age;
   }
 
+  public override object Clone() {
+    return new State(this.name, this.age);
+  }
+
   public int CompareTo(State c)
   {
     return Age.CompareTo(c.Age);

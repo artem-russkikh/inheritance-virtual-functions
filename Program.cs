@@ -4,6 +4,7 @@
 
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 class Program
 {
@@ -223,6 +224,34 @@ class Program
     for(int i = 0; i < mas.Length; i++) {
       mas[i].Show();
     }
+
+    int idpoisk = -1;
+    while (true) {
+      Console.Write("Поиск по ID: ");
+      try
+      {
+          idpoisk = int.Parse(Console.ReadLine());
+          break;
+      }
+      catch (FormatException e) { Console.WriteLine("Неправильный ввод {0}", e); continue; }
+    }
+
+    State s = Array.Find(mas, item => item.Id == idpoisk);
+    if (s != null) {
+      s.Show();
+    } else {
+      Console.WriteLine("Элемент не найден!");
+    }
+
+    Console.WriteLine("\nИспользование интерфейса для копирования объекта:");
+
+    State cloningObject = null;
+    if (mas[0] is State) {
+      cloningObject = (State) mas[0].Clone();
+    } else {
+      Console.WriteLine("mas[0] != State");
+    }
+    cloningObject.Show();
   }
 
   static void Main(string[] args)
