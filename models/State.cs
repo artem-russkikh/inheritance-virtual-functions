@@ -1,7 +1,7 @@
 // Государство
 using System;
 
-class State : HasShow
+class State : HasShow, IComparable <State>
 {
   public static int count=0;
 
@@ -21,6 +21,11 @@ class State : HasShow
     this.id = State.count;
     this.name = name;
     this.age = age;
+  }
+
+  public int CompareTo(State c)
+  {
+    return Age.CompareTo(c.Age);
   }
 
   public override void Show(string extenstion = null) {

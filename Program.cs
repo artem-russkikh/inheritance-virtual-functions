@@ -87,9 +87,7 @@ class Program
     System.Threading.Thread.Sleep(400);
   }
 
-  static void SecondPart() {
-    Console.WriteLine("\nМассив государств\n");
-    System.Threading.Thread.Sleep(400);
+  static State[] GenerateMas() {
     Random rand = new Random();
     State[] mas = new State[12];
     State[] tmp = new State[4];
@@ -104,6 +102,13 @@ class Program
       tmp[3].Age = rand.Next(10, 2000);
       mas[i]=tmp[rand.Next(0,4)];
     }
+    return mas;
+  }
+
+  static void SecondPart() {
+    Console.WriteLine("\nМассив государств\n");
+    System.Threading.Thread.Sleep(400);
+    State[] mas = GenerateMas();
     for(int i = 0; i < mas.Length; i++) {
       mas[i].Show();
     }
@@ -210,7 +215,15 @@ class Program
     Console.WriteLine(st.Name);
   }
 
-  static void ThirdPart() {}
+  static void ThirdPart() {
+    Console.WriteLine("\nИспользование интерфейса для сортировки по возрасту:");
+    System.Threading.Thread.Sleep(400);
+    State[] mas = GenerateMas();
+    Array.Sort(mas);
+    for(int i = 0; i < mas.Length; i++) {
+      mas[i].Show();
+    }
+  }
 
   static void Main(string[] args)
   {
