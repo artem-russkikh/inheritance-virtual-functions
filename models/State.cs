@@ -1,7 +1,7 @@
 // Государство
 using System;
 
-class State
+class State : HasShow
 {
   public static int count=0;
 
@@ -23,7 +23,7 @@ class State
     this.age = age;
   }
 
-  public virtual void Show(string extenstion = null) {
+  public override void Show(string extenstion = null) {
     if (extenstion != null) {
       Console.WriteLine("Гоcударство{0}.\n ID: {1}\n Название: {2}\n Возраст: {3}", extenstion, id, name, age);
     } else {
