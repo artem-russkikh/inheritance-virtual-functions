@@ -1,44 +1,43 @@
 # Inheritance and virtual functions in `C#`
-It is my laboratory work - program to demonstrate inheritance and virtual functions in C#
+Demonstration of inheritance and virtual functions in C#
 
-...
+## Getting Started
 
-# Наследование и виртуальные функции в `C#`
-Это моя лабораторная работа для демонстрации наследования и виртуальных функций в C#
+1. Install [Mono](http://www.mono-project.com/)
+2. Clone: 
+    ```bash
+    
+    git clone git@github.com:artem-russkikh/inheritance-virtual-functions.git
+    cd inheritance-virtual-functions
+    
+    ```
+3. Start app by running bash script: `./bin/run`
 
-## Подготовка
-Перед запуском необходимо установить [Mono](http://www.mono-project.com/)
+Bash script [./bin/run](../master/bin/run) will compile and run code of project
+
+## Description
+### Part 1
+Class ierarchy, virtual functions:
 ```
-git clone git@github.com:artem-russkikh/inheritance-virtual-functions.git
-cd inheritance-virtual-functions
-./bin/run
-```
-Файл [./bin/run](../master/bin/run) всего лишь bash скрипт для вызова команд mcs и mono, которые компилируют и запускают код проекта
+Republic, Monarchy, Kingdom, State;
 
-## Часть 1
-
-Иерархия классов, виртуальные функции
-```
-Республика, монархия, королевство, государство;
-государство -> монархия -> королевство
-государство -> республика
+State -> Monarchy -> Kingdom
+State -> Republic
 ```
 
-## Часть 2
+### Part 2
+Object initialization and performing queries:
 
-Запросы:
+ * Names of all states, that age is smaller than 1000
+ * Kingdoms count
+ * Average age all states
+ * Name of oldest state
 
- * Имена всех государств, которые существуют менее 1000 лет
- * Количество государств - королевств
- * Средний возраст всех государств
- * Наименование старейшего государства
+### Part 3
+Interfaces
 
-## Часть 3
-
-Интерфейсы
-
- * Иерархия должна содержать хотя бы один интерфейс и хотя бы один абстрактный класс.
- * Создать массив интерфейсных элементов и поместить в него экземпляры различных классов иерархии.
- * Реализовать сортировку элементов массива, используя стандартные интерфейсы и методы класса Array.
- * Реализовать поиск элемента в массиве, используя стандартные интерфейсы и методы класса Array.
- * Реализовать в одном из классов метод клонирования объектов. Показать клонирование объектов.
+* Required: interface and abstract class
+* Create an array of interface elements and place the various instances of the class hierarchy.
+* Implement sorting array elements using standard interfaces and methods of the Array class.
+* Implement a search element in the array, using standard interfaces and methods of the Array class.
+* Implement in one of the classes of objects cloning method. Show cloning of objects.
